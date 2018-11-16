@@ -1,0 +1,28 @@
+This is a small example of one way to call a C function from
+within Python using Cython. This particular example involves
+a C function for which the input a pointer to a user defined 
+C struct.
+
+To build the necessary files to call the function within
+Python, type the following in the command line:
+
+        python setup.py build_ext -i
+
+Following this, the "pytest" module can be imported when
+using Python. As an example, we can then call our Python
+function "test" (which calls the C function test) by 
+starting Python and tying the following commands:
+
+    >>> from pytest import test
+    >>> test()
+
+The output should be:
+
+    Calling pretest
+    Double is 1.5
+    Int is 0
+    Exiting test and returning n
+    0
+
+This example was constructed mainly to develop an 
+understanding of how to call C functions from within Python.
